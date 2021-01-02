@@ -22,7 +22,6 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
-	# ssh host
     host: # optional
     # ssh port
     port: # optional, default is 22
