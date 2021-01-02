@@ -20,4 +20,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         #password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.KEY }}
-        script: whoami
+        script: |
+          cd ~/test
+          whoami
+          mkdir release-${{ steps.date.outputs.date }}
+          ll
