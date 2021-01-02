@@ -1,7 +1,7 @@
 name: remote ssh command
 on:  
-  schedule:
-     - cron: "*/5 * * * *"
+  #schedule:
+    # - cron: "*/5 * * * *"
   workflow_dispatch:
 jobs:
 
@@ -12,7 +12,7 @@ jobs:
     - name: git checkout
       uses: actions/checkout@v2
     - name: Set current date as env variable
-      run: echo "REL=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      run: echo "REL=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
     - name: Set repo Url
       run: echo "GURL=$(git remote get-url origin)/master" >> $GITHUB_ENV
     - name: Echo current date
