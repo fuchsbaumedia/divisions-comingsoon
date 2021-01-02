@@ -33,4 +33,4 @@ jobs:
           whoami
           mkdir release-$REL
           git clone $GURL release-$REL
-          ls -l
+          ln -s release-$REL current
