@@ -9,6 +9,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    - name: git checkout
+      uses: actions/checkout@v2
     - name: Set current date as env variable
       run: echo "REL=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
     - name: Echo current date
@@ -26,4 +28,6 @@ jobs:
           cd ~/test
           whoami
           mkdir release-$REL
+          cd release-$REL
+          git clone
           ls -l
