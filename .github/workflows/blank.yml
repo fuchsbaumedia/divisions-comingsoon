@@ -22,10 +22,15 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
-	host: ${{ secrets.HOST }}
-	username: ${{ secrets.USERNAME }}
-	key: ${{ secrets.KEY }}
-	port: ${{ secrets.PORT }}
-	script: |
-	whoami
-	ls -al
+	# ssh host
+    host: # optional
+    # ssh port
+    port: # optional, default is 22
+    # ssh key passphrase
+    passphrase: # optional
+    # ssh username
+    username: # optional
+    # ssh password
+    password: # optional
+    # synchronous execution if multiple hosts
+    sync: # optional
