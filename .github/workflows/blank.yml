@@ -32,6 +32,5 @@ jobs:
           cd ~/test
           whoami
           mkdir release-$REL
-          cd release-$REL
-          git clone $GURL
+          git clone $GURL release-$REL
           ls -l
