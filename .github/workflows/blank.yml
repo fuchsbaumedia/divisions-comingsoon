@@ -14,7 +14,7 @@ jobs:
     - name: Set current date as env variable
       run: echo "REL=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
     - name: Set repo Url
-      run: echo "GURL=$(git remote get-url origin)/master" >> $GITHUB_ENV
+      run: echo "GURL=$(git remote get-url origin)" >> $GITHUB_ENV
     - name: Echo current date
       run: echo $REL
     - name: Echo Repo URL
@@ -32,5 +32,5 @@ jobs:
           cd ~/test
           whoami
           mkdir release-$REL
-          git clone $GURL release-$REL
+          git clone --branch master $GURL release-$REL
           ln -s release-$REL current
